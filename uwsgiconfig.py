@@ -120,7 +120,7 @@ def thread_compiler(num):
             ret = os.system(cmdline)
             if ret != 0:
                 print_lock.acquire()
-                print("something bad happened when compiling objfile %s … exiting" % objfile)
+                print("something bad (exit %d) happened when compiling objfile %s … exiting" % (ret, objfile))
                 print("full command:")
                 print(cmdline)
                 print_lock.release()
